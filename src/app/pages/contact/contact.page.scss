@@ -1,5 +1,6 @@
 .contactPage {
     .main-content {
+        text-align: center;
         margin-top: 20px;
         margin-left: 10px;
         margin-right: 10px;
@@ -26,5 +27,9 @@
     .profile-description {
         font-size: 15px;
         color: #888;
+    }
+
+    ion-icon{
+        margin: 0 10px;
     }
 }
