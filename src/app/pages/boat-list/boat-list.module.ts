@@ -4,21 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RestaurantsListPageRoutingModule } from './restaurants-list-routing.module';
-import { RestaurantsListPage } from './restaurants-list.page';
+import { BoatListPageRoutingModule } from './boat-list-routing.module';
+
+import { BoatListPage } from './boat-list.page';
 import { GlobalModule } from 'src/app/modules/global/global.module';
 import { ListCardComponent } from 'src/app/components/list-card/list-card.component';
-
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        RestaurantsListPageRoutingModule,
-        GlobalModule,
-
+        BoatListPageRoutingModule,
+        GlobalModule
     ],
-    declarations: [RestaurantsListPage, ListCardComponent]
+    declarations: [BoatListPage, ListCardComponent]
 })
-export class RestaurantsListPageModule { }
+export class BoatListPageModule { }
