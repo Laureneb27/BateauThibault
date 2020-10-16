@@ -1,15 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-home-card',
-    templateUrl: './home-card.component.html',
-    styleUrls: ['./home-card.component.scss'],
+    selector: 'app-basic-card',
+    templateUrl: './basic-card.component.html',
+    styleUrls: ['./basic-card.component.scss'],
 })
-export class HomeCardComponent implements OnInit {
+export class BasicCardComponent implements OnInit {
 
     @Input() imgName: string;
     @Input() cardName: string;
-    @Input() id: string;
+    @Input() link: string;
+
 
     constructor() { }
 
