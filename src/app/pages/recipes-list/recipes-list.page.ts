@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
-    selector: 'app-boat-list',
-    templateUrl: './boat-list.page.html',
-    styleUrls: ['./boat-list.page.scss'],
+    selector: 'app-recipes-list',
+    templateUrl: './recipes-list.page.html',
+    styleUrls: ['./recipes-list.page.scss'],
 })
-export class BoatListPage implements OnInit {
-    boats;
+export class RecipesListPage implements OnInit {
+    recipes;
     constructor(public dataService: DataService) { }
 
-    getBoats() {
-        this.dataService.getBoats()
+    getRecipes() {
+        this.dataService.getRecipes()
             .subscribe((response) => {
                 console.log(response);
-                this.boats = response;
+                this.recipes = response;
             }),
             (error) => {
                 console.log('Erreur :' + error)
@@ -22,8 +22,7 @@ export class BoatListPage implements OnInit {
     }
 
     ngOnInit() {
-        this.getBoats();
+        this.getRecipes();
     }
-
 
 }

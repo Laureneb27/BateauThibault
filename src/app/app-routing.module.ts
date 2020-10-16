@@ -16,17 +16,22 @@ const routes: Routes = [
         loadChildren: () => import('./pages/restaurants-list/restaurants-list.module').then(m => m.RestaurantsListPageModule)
     },
     {
-        path: 'contact',
-        loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactPageModule)
-    },
-    {
         path: 'boats-list',
-        loadChildren: () => import('./pages/boat-list/boat-list.module').then(m => m.BoatListPageModule)
+        loadChildren: () => import('./pages/boats-list/boats-list.module').then(m => m.BoatsListPageModule)
     },
     {
         path: 'recipes-list',
-        loadChildren: () => import('./pages/recipe-list/recipe-list.module').then(m => m.RecipeListPageModule)
+        loadChildren: () => import('./pages/recipes-list/recipes-list.module').then(m => m.RecipesListPageModule)
     },
+    {
+        path: 'products-list',
+        loadChildren: () => import('./pages/products-list/products-list.module').then(m => m.ProductsListPageModule)
+    },
+    {
+        path: 'contact',
+        loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactPageModule)
+    },
+
 
 
 ];

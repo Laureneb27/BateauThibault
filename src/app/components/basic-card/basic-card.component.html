@@ -3,6 +3,6 @@
 		<ion-card-title>{{ cardName }}</ion-card-title>
 	</ion-card-header>
 	<ion-card-content>
-		<img [src]="imgName" alt="" />
+		<img *ngIf="!imgName" [src]="imgName" alt="" />
 	</ion-card-content>
 </ion-card>
