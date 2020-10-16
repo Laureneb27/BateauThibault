@@ -4,4 +4,29 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content class="contactPage">
+	<div class="main-content">
+		<div class="circular" [ngStyle]="{'background-image': 'url(' + user.avatar +')'}"></div>
+		<h2>{{user.name}}</h2>
+		<p class="profile-description">{{user.description}}</p>
+		<hr>
+		<ion-list>
+			<ion-item>
+				<ion-icon name="pin" color="twitter"></ion-icon>
+				<p>{{user.address}}</p>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="mail" color="primary"></ion-icon>
+				{{user.email}}
+			</ion-item>
+			<ion-item>
+				<ion-icon name="call" color="danger"></ion-icon>
+				{{user.phone}}
+			</ion-item>
+			<ion-item>
+				<ion-icon name="logo-whatsapp" color="secondary"></ion-icon>
+				{{user.whatsapp}}
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,30 @@
+.contactPage {
+    .main-content {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px;
+        -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+        position: relative !important;
+    }
+
+    .circular {
+        width: 100px;
+        height: 100px;
+        position: inherit;
+        border-radius: 50%;
+        -webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        border: solid white;
+        background-size: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-description {
+        font-size: 15px;
+        color: #888;
+    }
+}
