@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DataService } from 'src/app/services/data/data.service';
 })
 export class RecipesListPage implements OnInit {
     recipes;
-    constructor(public dataService: DataService) { }
+    constructor(public dataService: DataService, public router: Router) { }
 
     getRecipes() {
         this.dataService.getRecipes()
@@ -21,8 +22,16 @@ export class RecipesListPage implements OnInit {
             }
     }
 
+    openDetailsWithState(id) {
+        let navigationExtras: NavigationExtras = {
+            state: {
+                data: this.recipes[id - 1]
+            }
+        };
+        this.router.navigate(['detail'], navigationExtras);
+    }
+
     ngOnInit() {
         this.getRecipes();
     }
-
 }

@@ -4,5 +4,6 @@
 	<app-list-card
 		*ngFor="let item of this.recipes"
 		[item]="item"
+		(click)="openDetailsWithState(item.id)"
 	></app-list-card>
 </ion-content>

@@ -1,5 +1,9 @@
 <app-header></app-header>
 
 <ion-content>
-	<app-list-card *ngFor="let item of this.boats" [item]="item"></app-list-card>
+	<app-list-card
+		*ngFor="let item of this.boats"
+		[item]="item"
+		(click)="openDetailsWithState(item.id)"
+	></app-list-card>
 </ion-content>

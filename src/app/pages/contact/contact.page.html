@@ -1,28 +1,33 @@
 <app-header></app-header>
 
 <ion-content class="contactPage">
-	<div class="main-content">
-		<div class="circular" [ngStyle]="{'background-image': 'url(' + user.avatar +')'}"></div>
+	<div class="main-border">
+		<div
+			class="circular"
+			[ngStyle]="{'background-image': 'url(' + user.avatar +')'}"
+		></div>
 		<h2>{{user.name}}</h2>
 		<p class="profile-description">{{user.description}}</p>
-		<hr>
+		<hr />
 		<ion-list>
-			<ion-item>
-				<ion-icon name="pin" color="twitter"></ion-icon>
-				<p>{{user.address}}</p>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="mail" color="primary"></ion-icon>
-				{{user.email}}
-			</ion-item>
-			<ion-item>
-				<ion-icon name="call" color="danger"></ion-icon>
-				{{user.phone}}
-			</ion-item>
-			<ion-item>
-				<ion-icon name="logo-whatsapp" color="secondary"></ion-icon>
-				{{user.whatsapp}}
-			</ion-item>
+			<address>
+				<ion-item>
+					<ion-icon name="pin" color="twitter"></ion-icon>
+					<p>{{user.address}}</p>
+				</ion-item>
+				<ion-item>
+					<ion-icon name="mail" color="primary"></ion-icon>
+					<a href="mailto:{{user.email}}">{{user.email}}</a>
+				</ion-item>
+				<ion-item>
+					<ion-icon name="call" color="success"></ion-icon>
+					<a href="tel:{{user.phone}}">{{user.phone}}</a>
+				</ion-item>
+				<ion-item>
+					<ion-icon name="logo-whatsapp" color="secondary"></ion-icon>
+					{{user.whatsapp}}
+				</ion-item>
+			</address>
 		</ion-list>
 	</div>
 </ion-content>
