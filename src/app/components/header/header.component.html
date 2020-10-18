@@ -4,7 +4,12 @@
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
 		<ion-title>Le bateau de Thibthib</ion-title>
-		<ion-button slot="end" fill="clear" color="warning">
+		<ion-button
+			slot="end"
+			fill="clear"
+			color="warning"
+			(click)="navigateTo('check-out')"
+		>
 			<ion-icon slot="icon-only" name="cart"> </ion-icon>
 		</ion-button>
 	</ion-toolbar>
