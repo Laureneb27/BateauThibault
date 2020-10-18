@@ -10,7 +10,11 @@ export class ProductsListPage implements OnInit {
     products;
     productFilter;
     categoriesNames = [];
-    constructor(public dataService: DataService) { }
+    segment: string;
+
+    constructor(public dataService: DataService) {
+        this.segment = "all";
+    }
 
     getProducts() {
         this.dataService.getProducts()
