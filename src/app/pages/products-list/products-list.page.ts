@@ -36,7 +36,7 @@ export class ProductsListPage implements OnInit {
                         this.categoriesNames.push({ id: element.category, name: 'Poissons', img: 'fish-outline' });
                         break;
                     case 1:
-                        this.categoriesNames.push({ id: element.category, name: 'Huitre', img: 'apps-outline' });
+                        this.categoriesNames.push({ id: element.category, name: 'Huitres', img: 'apps-outline' });
                         break;
                     case 2:
                         this.categoriesNames.push({ id: element.category, name: 'Crustacés', img: 'apps-outline' });
