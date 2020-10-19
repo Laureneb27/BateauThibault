@@ -2,4 +2,9 @@ ion-card {
 	margin: 0;
 	border-radius: 1.2rem;
 	background-color: #d8ffd0;
+	border: 1px solid #ccf3c5;
+}
+
+ion-card-title.ion-inherit-color.ios.hydrated {
+	font-size: 18px;
 }

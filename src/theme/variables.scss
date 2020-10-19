@@ -6,6 +6,13 @@
 	/** font **/
 	--ion-font-family: 'Nunito';
 
+	/** product filter segment **/
+	ion-segment-button {
+		--border-radius: 50px;
+		--border-color: transparent;
+		--indicator-box-shadow: 0 0 5px #3880ff;
+	}
+
 	/** primary **/
 	--ion-color-primary: #3880ff;
 	--ion-color-primary-rgb: 56, 128, 255;
