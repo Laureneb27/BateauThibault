@@ -4,10 +4,14 @@
 	<div class="main-border">
 		<div *ngIf="pageData; else elseBlock">
 			<h1>{{pageData.name}}</h1>
+			<img
+				*ngIf="pageData.image"
+				src="{{pageData.image}}"
+				alt="item image"
+			/>
 
 			<!-- Recipe -->
 			<div *ngIf="pageData.level;">
-				<img src="{{pageData.image}}" alt="item image" />
 				<ion-row>
 					<ion-col size="6" class="d-flex j-center">
 						Difficulté:
@@ -30,10 +34,9 @@
 					</ion-col>
 				</ion-row>
 			</div>
-			<p>{{pageData.description}}</p>
+			<p *ngIf="pageData.description">{{pageData.description}}</p>
 			<!-- Restaurant -->
 			<div *ngIf="pageData.address;">
-				<img src="{{pageData.image}}" alt="item image" />
 				<ion-item>
 					<ion-icon name="storefront-outline" color="primary"></ion-icon>
 					<p>{{pageData.address}}</p>
