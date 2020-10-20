@@ -1,0 +1,19 @@
+<ion-card>
+	<ion-card-content>
+		<h4>{{ product.name }}</h4>
+		<p class="lgrey">{{ product.unit }}</p>
+		<div class="d-flex section-counter">
+			<p class="bold">{{ product.price }} €</p>
+			<div class="d-flex counter">
+				<ion-button fill="clear">
+					<ion-icon name="remove-circle-outline" color="warning">
+					</ion-icon>
+				</ion-button>
+				<p>{{ productNumber }}</p>
+				<ion-button fill="clear">
+					<ion-icon name="add-circle-outline" color="warning"> </ion-icon>
+				</ion-button>
+			</div>
+		</div>
+	</ion-card-content>
+</ion-card>

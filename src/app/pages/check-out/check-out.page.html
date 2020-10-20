@@ -1,5 +1,19 @@
 <app-header></app-header>
 
 <ion-content>
-	<h1>Panier</h1>
+	<div class="main">
+		<h1>Panier</h1>
+		<app-checkout-card
+			[product]="product"
+			[productNumber]="productNumber"
+		></app-checkout-card>
+		<app-checkout-card
+			[product]="product"
+			[productNumber]="productNumber"
+		></app-checkout-card>
+		<app-checkout-card
+			[product]="product"
+			[productNumber]="productNumber"
+		></app-checkout-card>
+	</div>
 </ion-content>

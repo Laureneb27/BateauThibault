@@ -8,6 +8,7 @@ import { CheckOutPageRoutingModule } from './check-out-routing.module';
 
 import { CheckOutPage } from './check-out.page';
 import { GlobalModule } from 'src/app/modules/global/global.module';
+import { CheckoutCardComponent } from 'src/app/components/checkout-card/checkout-card.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { GlobalModule } from 'src/app/modules/global/global.module';
     CheckOutPageRoutingModule,
     GlobalModule
   ],
-  declarations: [CheckOutPage]
+  declarations: [CheckOutPage, CheckoutCardComponent]
 })
 export class CheckOutPageModule { }

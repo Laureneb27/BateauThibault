@@ -1,0 +1,22 @@
+ion-card {
+	margin: 6px 0;
+}
+.section-counter {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.counter {
+	align-items: center;
+}
+h4 {
+	font-weight: bold;
+	font-size: 18px;
+}
+ion-button {
+	height: 20px;
+}
+
+ion-card-content {
+	padding-bottom: 1rem;
+}
