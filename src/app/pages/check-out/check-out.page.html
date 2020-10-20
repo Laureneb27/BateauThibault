@@ -4,16 +4,8 @@
 	<div class="main">
 		<h1>Panier</h1>
 		<app-checkout-card
+			*ngFor="let product of this.products"
 			[product]="product"
-			[productNumber]="productNumber"
-		></app-checkout-card>
-		<app-checkout-card
-			[product]="product"
-			[productNumber]="productNumber"
-		></app-checkout-card>
-		<app-checkout-card
-			[product]="product"
-			[productNumber]="productNumber"
 		></app-checkout-card>
 	</div>
 </ion-content>

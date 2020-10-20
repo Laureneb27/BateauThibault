@@ -11,15 +11,14 @@ export class ProductCardComponent implements OnInit {
     @Input() shoppingCart: Array<any>;
     constructor() { }
     addToCart(event, id) {
-        let thisProductAlreadyInCart = this.shoppingCart.filter(product => product.idProduct == id);
+        event.stopPropagation();
+        let thisProductAlreadyInCart = this.shoppingCart.filter(product => product.id == id);
         if (thisProductAlreadyInCart.length == 0) {
-            this.shoppingCart.push({
-                'idProduct': id, 'quantity': 1
-            })
+            this.shoppingCart.push(this.product);
+            this.shoppingCart.filter(product => product.id == id)[0].quantity = 1;
         } else {
             thisProductAlreadyInCart[0].quantity++;
         }
-        event.stopPropagation();
     }
     ngOnInit() { }
 
