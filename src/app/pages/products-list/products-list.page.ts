@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+
 import { DataService } from 'src/app/services/data/data.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class ProductsListPage implements OnInit {
     categoriesNames = [];
     segment: string;
 
-    constructor(public dataService: DataService) {
+    constructor(public dataService: DataService, public router: Router) {
         this.segment = "all";
     }
 
@@ -60,6 +62,16 @@ export class ProductsListPage implements OnInit {
         } else {
             this.productFilter = this.products.filter(product => product.category == ev.detail.value);
         }
+    }
+
+    openDetailsWithState(id) {
+        console.log();
+        let navigationExtras: NavigationExtras = {
+            state: {
+                data: this.products.filter(product => product.id == id)[0]
+            }
+        };
+        this.router.navigate(['detail'], navigationExtras);
     }
     ngOnInit() {
         this.getProducts();

@@ -8,6 +8,7 @@ import { ProductsListPageRoutingModule } from './products-list-routing.module';
 
 import { ProductsListPage } from './products-list.page';
 import { GlobalModule } from 'src/app/modules/global/global.module';
+import { ProductCardComponent } from 'src/app/components/product-card/product-card.component';
 
 @NgModule({
     imports: [
@@ -16,6 +17,6 @@ import { GlobalModule } from 'src/app/modules/global/global.module';
         IonicModule,
         ProductsListPageRoutingModule, GlobalModule
     ],
-    declarations: [ProductsListPage]
+    declarations: [ProductsListPage, ProductCardComponent]
 })
 export class ProductsListPageModule { }

@@ -4,9 +4,10 @@
 	<div class="main-border">
 		<div *ngIf="pageData; else elseBlock">
 			<h1>{{pageData.name}}</h1>
-			<img src="{{pageData.image}}" alt="item image" />
+
 			<!-- Recipe -->
 			<div *ngIf="pageData.level;">
+				<img src="{{pageData.image}}" alt="item image" />
 				<ion-row>
 					<ion-col size="6" class="d-flex j-center">
 						Difficulté:
@@ -32,6 +33,7 @@
 			<p>{{pageData.description}}</p>
 			<!-- Restaurant -->
 			<div *ngIf="pageData.address;">
+				<img src="{{pageData.image}}" alt="item image" />
 				<ion-item>
 					<ion-icon name="storefront-outline" color="primary"></ion-icon>
 					<p>{{pageData.address}}</p>
@@ -52,6 +54,35 @@
 						<a href="{{pageData.website}}">{{pageData.website}}</a>
 					</ion-item>
 				</div>
+			</div>
+			<!-- Produits -->
+			<div *ngIf="pageData.price;">
+				<ion-item *ngIf="pageData.comments">
+					<ion-icon name="chatbubbles-outline" color="primary"></ion-icon>
+					<p>{{pageData.comments}}</p>
+				</ion-item>
+				<ion-item *ngIf="pageData.price">
+					<ion-icon name="cash-outline" color="secondary"></ion-icon>
+					<p>{{pageData.price}} € / {{pageData.unit}}</p>
+				</ion-item>
+				<ion-item *ngIf="pageData.owner">
+					<ion-icon name="person-outline" color="warning"></ion-icon>
+					<p>{{pageData.owner}}</p>
+				</ion-item>
+				<ion-item>
+					<ion-icon
+						*ngIf="pageData.availability; else elseTemplate"
+						name="checkmark-circle-outline"
+						color="success"
+					></ion-icon>
+					<ng-template #elseTemplate>
+						<ion-icon
+							name="close-circle-outline"
+							color="danger"
+						></ion-icon>
+					</ng-template>
+					<p>{{pageData.availability ?'Disponible':'Indisponible'}}</p>
+				</ion-item>
 			</div>
 		</div>
 		<!-- 404 -->

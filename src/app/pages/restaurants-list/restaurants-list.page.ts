@@ -25,7 +25,7 @@ export class RestaurantsListPage implements OnInit {
     openDetailsWithState(id) {
         let navigationExtras: NavigationExtras = {
             state: {
-                data: this.restaurants[id - 1]
+                data: this.restaurants.filter(restaurants => restaurants.id == id)[0]
             }
         };
         this.router.navigate(['detail'], navigationExtras);

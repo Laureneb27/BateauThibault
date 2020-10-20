@@ -2,8 +2,8 @@
 
 <ion-content>
 	<!-- Default Segment -->
-	<ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
-		<ion-segment-button value="all">
+	<ion-segment (ionChange)="segmentChanged($event)">
+		<ion-segment-button value="all" checked>
 			<ion-icon name="apps-outline"></ion-icon>
 			<ion-label>Tous</ion-label>
 		</ion-segment-button>
@@ -18,11 +18,10 @@
 	<ion-grid>
 		<ion-row>
 			<ion-col *ngFor="let product of this.productFilter" size="6">
-				<app-basic-card
-					link=""
-					[cardName]="product.name"
-					imgName="fish.png"
-				></app-basic-card>
+				<app-product-card
+					[product]="product"
+					(click)="openDetailsWithState(product.id)"
+				></app-product-card>
 			</ion-col>
 		</ion-row>
 	</ion-grid>
