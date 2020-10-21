@@ -1,5 +1,5 @@
 {
-  "appId": "com.example.app",
+  "appId": "com.example.bateauThibaultApp",
   "appName": "bateauThibault",
   "bundledWebRuntime": false,
   "npmClient": "npm",
