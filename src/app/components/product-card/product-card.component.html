@@ -1,11 +1,12 @@
 <ion-card>
-	<ion-card-title>{{ product.name }}</ion-card-title>
-
-	<ion-card-content>
-		<ion-fab vertical="top" horizontal="end" slot="fixed">
-			<ion-fab-button (click)="addToCart($event)">
-				<ion-icon name="add"></ion-icon>
-			</ion-fab-button>
-		</ion-fab>
-	</ion-card-content>
+	<div class="heightSize">
+		<h4>{{ product.name }}</h4>
+	</div>
+	<div class="d-flex">
+		<p>{{ product.price }} € / {{ product.unit }}</p>
+		<button class="ion-activatable ripple-parent" (click)="addToCart($event)">
+			<img src="assets/images/addCart.svg" alt="" />
+			<ion-ripple-effect></ion-ripple-effect>
+		</button>
+	</div>
 </ion-card>
