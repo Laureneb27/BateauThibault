@@ -8,7 +8,7 @@
 			<app-checkout-card
 				*ngFor="let product of this.products"
 				[product]="product"
-				(editedEmitter)="updateValue($event)"
+				(deleteEmitter)="updateValue($event)"
 				(updateEmitter)="childEventClicked($event)"
 			></app-checkout-card>
 		</ion-list>

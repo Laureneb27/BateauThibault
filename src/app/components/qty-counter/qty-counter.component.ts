@@ -12,13 +12,27 @@ export class QtyCounterComponent implements OnInit {
 
     constructor(public shoppingCartService: ShoppingCartService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        let element = this.shoppingCartService.getQty(this.product);
+        console.log(this.shoppingCartService.getQty(this.product));
+        if (!element || element.length == 0) {
+            this.product.quantity = 0;
+        }
+        else {
+            this.product.quantity = element[0].quantity;
+        }
+    }
 
     addQty(product) {
-        this.shoppingCartService.addQty(product);
-        product.quantity++;
-        this.updateEmitter.emit();
+        if (product.quantity) {
+            this.shoppingCartService.addQty(product);
+            product.quantity++;
+        }
+        else {
+            this.shoppingCartService.addToCart(product);
+        }
 
+        this.updateEmitter.emit();
     }
 
     removeQty(product) {

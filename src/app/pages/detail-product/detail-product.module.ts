@@ -8,6 +8,7 @@ import { DetailProductPageRoutingModule } from './detail-product-routing.module'
 
 import { DetailProductPage } from './detail-product.page';
 import { GlobalModule } from 'src/app/modules/global/global.module';
+import { QtyCounterComponent } from 'src/app/components/qty-counter/qty-counter.component';
 
 @NgModule({
     imports: [
@@ -17,6 +18,6 @@ import { GlobalModule } from 'src/app/modules/global/global.module';
         DetailProductPageRoutingModule,
         GlobalModule
     ],
-    declarations: [DetailProductPage]
+    declarations: [DetailProductPage, QtyCounterComponent]
 })
 export class DetailProductPageModule { }

@@ -29,11 +29,16 @@ export class ShoppingCartService {
     }
 
     addQty(product) {
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        let elementInCart = cart.filter(element => element.id == product.id);
-        elementInCart[0].quantity++;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        this.presentToast('La quantité a bien été augmenté.');
+        if (localStorage.getItem('cart')) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            let elementInCart = cart.filter(element => element.id == product.id);
+            elementInCart[0].quantity++;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            this.presentToast('La quantité a bien été augmenté.');
+        } else {
+            this.addToCart(product);
+        }
+
     }
 
     removeQty(product) {
@@ -49,6 +54,14 @@ export class ShoppingCartService {
         let elementInCart = cart.filter(element => element.id != product.id);
         localStorage.setItem('cart', JSON.stringify(elementInCart));
         this.presentToast('Le produit a bien été supprimé.');
+    }
+
+    getQty(product) {
+        if (localStorage.getItem('cart')) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            let elementInCart = cart.filter(element => element.id == product.id);
+            return elementInCart;
+        }
     }
 
     async presentToast(message) {
