@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'src/app/services/shoppingCart/shopping-cart.service';
 
 @Component({
     selector: 'app-product-card',
@@ -8,17 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductCardComponent implements OnInit {
 
     @Input() product: object;
-    @Input() shoppingCart: Array<any>;
-    constructor() { }
-    addToCart(event, id) {
+    constructor(public shoppingCartService: ShoppingCartService,) { }
+    addToCart(event) {
         event.stopPropagation();
-        let thisProductAlreadyInCart = this.shoppingCart.filter(product => product.id == id);
-        if (thisProductAlreadyInCart.length == 0) {
-            this.shoppingCart.push(this.product);
-            this.shoppingCart.filter(product => product.id == id)[0].quantity = 1;
-        } else {
-            thisProductAlreadyInCart[0].quantity++;
-        }
+
+        this.shoppingCartService.addToCart(this.product);
     }
     ngOnInit() { }
 

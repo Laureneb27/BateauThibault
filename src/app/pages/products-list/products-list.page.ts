@@ -13,7 +13,6 @@ export class ProductsListPage implements OnInit {
     productFilter;
     categoriesNames = [];
     segment: string;
-    shoppingCart = [];
 
     constructor(public dataService: DataService, public router: Router) {
         this.segment = "all";

@@ -19,7 +19,6 @@
 		<ion-row>
 			<ion-col *ngFor="let product of this.productFilter" size="6">
 				<app-product-card
-					[shoppingCart]="this.shoppingCart"
 					[product]="product"
 					(click)="openDetailsWithState(product.id)"
 				></app-product-card>

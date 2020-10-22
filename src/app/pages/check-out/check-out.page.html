@@ -3,9 +3,14 @@
 <ion-content>
 	<div class="main">
 		<h1>Panier</h1>
-		<app-checkout-card
-			*ngFor="let product of this.products"
-			[product]="product"
-		></app-checkout-card>
+
+		<ion-list>
+			<app-checkout-card
+				*ngFor="let product of this.products"
+				[product]="product"
+			></app-checkout-card>
+		</ion-list>
+		<app-total-cart></app-total-cart>
+		<ion-button expand="block" (click)="navigate()">Continuer</ion-button>
 	</div>
 </ion-content>

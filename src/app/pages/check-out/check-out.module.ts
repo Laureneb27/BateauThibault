@@ -9,15 +9,16 @@ import { CheckOutPageRoutingModule } from './check-out-routing.module';
 import { CheckOutPage } from './check-out.page';
 import { GlobalModule } from 'src/app/modules/global/global.module';
 import { CheckoutCardComponent } from 'src/app/components/checkout-card/checkout-card.component';
+import { TotalCartComponent } from 'src/app/components/total-cart/total-cart.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CheckOutPageRoutingModule,
-    GlobalModule
-  ],
-  declarations: [CheckOutPage, CheckoutCardComponent]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        CheckOutPageRoutingModule,
+        GlobalModule
+    ],
+    declarations: [CheckOutPage, CheckoutCardComponent, TotalCartComponent]
 })
 export class CheckOutPageModule { }
