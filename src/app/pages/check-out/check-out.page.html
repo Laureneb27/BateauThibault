@@ -8,9 +8,11 @@
 			<app-checkout-card
 				*ngFor="let product of this.products"
 				[product]="product"
+				(editedEmitter)="updateValue($event)"
+				(updateEmitter)="childEventClicked($event)"
 			></app-checkout-card>
 		</ion-list>
-		<app-total-cart></app-total-cart>
+		<app-total-cart [event]="this.clickedEvent"></app-total-cart>
 		<ion-button expand="block" (click)="navigate()">Continuer</ion-button>
 	</div>
 </ion-content>

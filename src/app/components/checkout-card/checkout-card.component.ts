@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingCartService } from 'src/app/services/shoppingCart/shopping-cart.service';
 
@@ -10,19 +10,30 @@ import { ShoppingCartService } from 'src/app/services/shoppingCart/shopping-cart
 export class CheckoutCardComponent implements OnInit {
 
     @Input() product: object;
-    @Input() productNumber: number;
+    @Output() deleteEmitter = new EventEmitter<number>();
+    @Output() updateEmitter = new EventEmitter();
     constructor(public shoppingCartService: ShoppingCartService, private router: Router) { }
 
     addQty(product) {
         this.shoppingCartService.addQty(product);
+        product.quantity++;
+        this.updateEmitter.emit();
+
     }
 
     removeQty(product) {
-        this.shoppingCartService.removeQty(product);
+        if (product.quantity == 1) {
+            this.deleteProduct(product);
+        } else {
+            this.shoppingCartService.removeQty(product);
+            product.quantity--;
+        }
+        this.updateEmitter.emit();
     }
 
     deleteProduct(product) {
         this.shoppingCartService.deleteProduct(product);
+        this.deleteEmitter.emit(product.id);
     }
     navigate() {
         this.router.navigate(['/checkpoint'])

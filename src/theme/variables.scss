@@ -8,6 +8,9 @@
 
 	/** product filter segment **/
 	ion-segment-button {
+		--border-style: none;
+	}
+	ion-item-sliding ion-item {
 		--border-radius: 50px;
 		--border-color: transparent;
 		--indicator-box-shadow: 0 0 5px #3880ff;
