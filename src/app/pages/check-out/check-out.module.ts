@@ -10,6 +10,7 @@ import { CheckOutPage } from './check-out.page';
 import { GlobalModule } from 'src/app/modules/global/global.module';
 import { CheckoutCardComponent } from 'src/app/components/checkout-card/checkout-card.component';
 import { TotalCartComponent } from 'src/app/components/total-cart/total-cart.component';
+import { QtyCounterComponent } from 'src/app/components/qty-counter/qty-counter.component';
 
 @NgModule({
     imports: [
@@ -19,6 +20,6 @@ import { TotalCartComponent } from 'src/app/components/total-cart/total-cart.com
         CheckOutPageRoutingModule,
         GlobalModule
     ],
-    declarations: [CheckOutPage, CheckoutCardComponent, TotalCartComponent]
+    declarations: [CheckOutPage, CheckoutCardComponent, TotalCartComponent, QtyCounterComponent]
 })
 export class CheckOutPageModule { }

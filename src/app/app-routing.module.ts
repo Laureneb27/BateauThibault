@@ -36,10 +36,15 @@ const routes: Routes = [
         path: 'detail',
         loadChildren: () => import('./pages/detail/detail.module').then(m => m.DetailPageModule)
     },
-  {
-    path: 'check-out',
-    loadChildren: () => import('./pages/check-out/check-out.module').then( m => m.CheckOutPageModule)
-  },
+    {
+        path: 'check-out',
+        loadChildren: () => import('./pages/check-out/check-out.module').then(m => m.CheckOutPageModule)
+    },
+    {
+        path: 'detail-product',
+        loadChildren: () => import('./pages/detail-product/detail-product.module').then(m => m.DetailProductPageModule)
+    },
+
 ];
 
 @NgModule({

@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<ion-content>
+	<div class="main-border">
+		<div *ngIf="pageData; else elseBlock">
+			<h1>{{pageData.name}}</h1>
+			<!-- Produits -->
+			<div>
+				<ion-item *ngIf="pageData.comments">
+					<ion-icon name="chatbubbles-outline" color="primary"></ion-icon>
+					<p>{{pageData.comments}}</p>
+				</ion-item>
+				<ion-item *ngIf="pageData.owner">
+					<ion-icon name="person-outline" color="warning"></ion-icon>
+					<p>{{pageData.owner}}</p>
+				</ion-item>
+				<ion-item>
+					<ion-icon
+						*ngIf="pageData.availability; else elseTemplate"
+						name="checkmark-circle-outline"
+						color="success"
+					></ion-icon>
+					<ng-template #elseTemplate>
+						<ion-icon
+							name="close-circle-outline"
+							color="danger"
+						></ion-icon>
+					</ng-template>
+					<p>{{pageData.availability ?'Disponible':'Indisponible'}}</p>
+				</ion-item>
+			</div>
+			<div class="d-flex ion-justify-content-between padding1-2">
+				<div>qty</div>
+				<div>{{pageData.price}} € /{{pageData.unit}}</div>
+			</div>
+		</div>
+		<!-- 404 -->
+		<ng-template #elseBlock>
+			<div>
+				<p>Oups, veuillez revenir sur l'écran principal.</p>
+				<img src="assets/images/404.svg" alt="detail" />
+				<ion-button color="primary" href="/">Accueil</ion-button>
+			</div>
+		</ng-template>
+	</div>
+</ion-content>

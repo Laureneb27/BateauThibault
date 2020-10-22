@@ -14,23 +14,21 @@ export class CheckoutCardComponent implements OnInit {
     @Output() updateEmitter = new EventEmitter();
     constructor(public shoppingCartService: ShoppingCartService, private router: Router) { }
 
-    addQty(product) {
-        this.shoppingCartService.addQty(product);
-        product.quantity++;
+    // addQty(product) {
+    //     this.shoppingCartService.addQty(product);
+    //     product.quantity++;
+    //     this.updateEmitter.emit();
+    // }
+
+    // removeQty(product) {
+    //     this.shoppingCartService.removeQty(product);
+    //     product.quantity--;
+    //     this.updateEmitter.emit();
+    // }
+
+    updateValue(val: number) {
         this.updateEmitter.emit();
-
     }
-
-    removeQty(product) {
-        if (product.quantity == 1) {
-            this.deleteProduct(product);
-        } else {
-            this.shoppingCartService.removeQty(product);
-            product.quantity--;
-        }
-        this.updateEmitter.emit();
-    }
-
     deleteProduct(product) {
         this.shoppingCartService.deleteProduct(product);
         this.deleteEmitter.emit(product.id);

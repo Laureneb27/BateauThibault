@@ -71,7 +71,7 @@ export class ProductsListPage implements OnInit {
                 data: this.products.filter(product => product.id == id)[0]
             }
         };
-        this.router.navigate(['detail'], navigationExtras);
+        this.router.navigate(['detail-product'], navigationExtras);
     }
     ngOnInit() {
         this.getProducts();

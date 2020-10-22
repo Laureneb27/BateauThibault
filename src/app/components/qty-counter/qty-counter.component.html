@@ -1,0 +1,13 @@
+<div class="d-flex counter">
+	<ion-button
+		fill="clear"
+		(click)="removeQty(product)"
+		[attr.disabled]="product.quantity == 1 ? '' : null"
+	>
+		<ion-icon name="remove-circle-outline" color="warning"> </ion-icon>
+	</ion-button>
+	<p>{{ product.quantity }}</p>
+	<ion-button fill="clear" (click)="addQty(product)">
+		<ion-icon name="add-circle-outline" color="warning"> </ion-icon>
+	</ion-button>
+</div>
