@@ -59,7 +59,11 @@ export class ProductsListPage implements OnInit {
     segmentChanged(ev: any) {
         if (ev.detail.value == 'all') {
             this.productFilter = this.products;
-        } else {
+        }
+        else if (ev.detail.value == 'promo') {
+            this.productFilter = this.products.filter(product => product.sale);
+        }
+        else {
             this.productFilter = this.products.filter(product => product.category == ev.detail.value);
         }
     }

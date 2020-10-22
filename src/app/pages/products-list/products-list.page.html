@@ -2,7 +2,11 @@
 
 <ion-content>
 	<!-- Default Segment -->
-	<ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+	<ion-segment
+		[(ngModel)]="segment"
+		(ionChange)="segmentChanged($event)"
+		scrollable
+	>
 		<ion-segment-button value="all">
 			<ion-icon name="apps-outline"></ion-icon>
 			<ion-label>Tous</ion-label>
@@ -13,6 +17,10 @@
 		>
 			<ion-icon [name]="category.img"></ion-icon>
 			<ion-label>{{category.name}}</ion-label>
+		</ion-segment-button>
+		<ion-segment-button value="promo">
+			<ion-icon name="gift-outline"></ion-icon>
+			<ion-label>Promo</ion-label>
 		</ion-segment-button>
 	</ion-segment>
 	<ion-grid>

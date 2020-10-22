@@ -3,7 +3,21 @@
 		<h4>{{ product.name }}</h4>
 	</div>
 	<div class="d-flex">
-		<p>{{ product.price }} € / {{ product.unit }}</p>
+		<p *ngIf="!product.sale; else promoBlock">
+			{{ product.price }} € / {{ product.unit }}
+		</p>
+		<ng-template #promoBlock>
+			<div>
+				<p>
+					<strike> {{ product.price }} € </strike>
+				</p>
+				<p class="green">
+					{{ product.price - product.price * (product.discount / 100) }} €
+					/
+					{{ product.unit }}
+				</p>
+			</div>
+		</ng-template>
 		<button class="ion-activatable ripple-parent" (click)="addToCart($event)">
 			<img src="assets/images/addCart.svg" alt="" />
 			<ion-ripple-effect></ion-ripple-effect>

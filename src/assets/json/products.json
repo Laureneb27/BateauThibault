@@ -178,5 +178,17 @@
         "discount": 5.0,
         "comments": "",
         "owner": "tig"
+    },
+    {
+        "id": 7,
+        "name": "Test pêche",
+        "category": 1,
+        "price": 10.0,
+        "unit": "kg",
+        "availability": true,
+        "sale": true,
+        "discount": 5.0,
+        "comments": "",
+        "owner": "tig"
     }
 ]
