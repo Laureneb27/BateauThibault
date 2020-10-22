@@ -1,6 +1,8 @@
 ion-card {
 	margin: 6px 0;
 	width: 100%;
+	box-shadow: none;
+	border: 1px solid rgba(0, 0, 0, 0.12);
 }
 .section-counter {
 	flex-direction: row;
